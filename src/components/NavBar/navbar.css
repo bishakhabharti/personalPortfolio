@@ -80,16 +80,15 @@
 
 }
 
-@media screen and (max-width:720px){
-    .mobMenu{
-        display: flex;
 
+@media screen and (max-width:720px){
+    .mobMenu {
+        display: flex;
     }
-    .desktopMenu{
-        display: none;
+    .desktopMenu {
+        display: none; /* ✅ this will now work */
     }
-    .desktopMenuBtn{
+    .desktopMenuBtn {
         display: none;
     }
 }
-
