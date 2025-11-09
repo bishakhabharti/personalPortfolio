@@ -13,11 +13,13 @@ import emailjs from '@emailjs/browser';
 const Contact = () => {
       const form = useRef();
        const sendEmail = (e) => {
+
     e.preventDefault();
+    
 
     emailjs
-      .sendForm('service_46w279l', 'template_glxldii', form.current, {
-        publicKey: 'kOs1JCPR-AvzHF8f_hm-0',
+      .sendForm(process.env.REACT_APP_EMAILJS_SERVICE_ID, process.env.REACT_APP_EMAILJS_TEMPLATE_ID, form.current, {
+        publicKey: process.env.REACT_APP_EMAILJS_PUBLIC_KEY,
       })
       .then(
         () => {
@@ -48,18 +50,19 @@ const Contact = () => {
     <div id='contact'>
         <h1 className='contactPageTitle'>Contact Me</h1>
         <span className='contactDesc'>Please fill out the form below to discuss any work opportuninties.</span>
-        <form className='contactForm' ref={form}  onSubmit={sendEmail}>
-            <input type='text' className='name' placeholder='your_Name'/>
-            <input type='email' className='email' placeholder='your_Email'/>
-            <textarea className='msg' name='message'rows='5'placeholder='Your Message'></textarea>
-            <button type='submit' value='send' className='submitBtn'>Submit</button>
+        <form className='contactForm' ref={form} onSubmit={sendEmail}>
+          <input type='text' name='user_name' className='name' placeholder='Your Name' required />
+          <input type='email' name='user_email' className='email' placeholder='Your Email' required />
+          <textarea name='message' className='msg' rows='5' placeholder='Your Message' required></textarea>
+          <button type='submit' className='submitBtn'>Submit</button>
+        </form>
+
             <div className='links'>
                 <img src={FacebookIcon} alt='Facebook'className='link'/>
                 <img src={TwitterIcon} alt='Twitter'className='link'/>
                 <img src={InstagramIcon} alt='Instagram'className='link'/>
                
             </div>
-        </form>
 
     </div>
    </section>
