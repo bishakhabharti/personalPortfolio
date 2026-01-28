@@ -35,7 +35,7 @@ const Contact = () => {
   return (
    <section id='contactPage'>
     <div id='clients'>
-        <h1 className='contactPageTitle'>My Clients</h1>
+        <h1 className='contactPageTitle'>My Dream Company</h1>
         <p className='clientDesc'>I want the opportunity to work with a diverse group og companies.
             Some of the notable companies I want to work in includes 
         </p>
